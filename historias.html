@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -17,13 +17,20 @@
         </nav>
     </header>
     <main>
-        <h2>Testimonios</h2>
-        <p>"María, 16 años: Hablar con un amigo me ayudó a manejar mis emociones"</p>
-        <p>"Juan, 17 años: El deporte me ayudó a mejorar mi estado de ánimo."</p>
+        <h2>Historias para cada emoción</h2>
+        <p>Elige cómo te sientes y descubre una historia especial para ti:</p>
+
+        <button onclick="mostrarHistoria('feliz')"> Feliz</button>
+        <button onclick="mostrarHistoria('triste')"> Triste</button>
+        <button onclick="mostrarHistoria('enojado')"> Enojado</button>
+        <button onclick="mostrarHistoria('motivado')"> Motivado</button>
+
+        <div id="historia"></div>
     </main>
     <footer>
         <p>© 2025 Kora Refugio Web</p>
     </footer>
-    
+
+    <script src="script.js"></script>
 </body>
 </html>
