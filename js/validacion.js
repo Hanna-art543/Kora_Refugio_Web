@@ -17,8 +17,26 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!nombre || !edad || !mensaje) {
             alert("Por favor, completa todos los campos.");
         } else {
-            alert("¡Mensaje enviado correctamente!");
-            form.reset(); // Limpia el formulario después del envío
+            const contenedor = document.querySelector("main");
+
+            const aviso = document.createElement("p");
+            aviso.textContent = "¡Mensaje enviado con éxito! Gracias por compartir 💜";
+            aviso.style.backgroundColor = "#b28be3";
+            aviso.style.color = "white";
+            aviso.style.padding = "10px";
+            aviso.style.borderRadius = "10px";
+            aviso.style.textAlign = "center";
+            aviso.style.marginTop = "15px";
+            aviso.style.fontWeight = "bold";
+
+            // Agregamos el mensaje al main
+            contenedor.appendChild(aviso);
+
+            // Lo borramos automáticamente después de 4 segundos
+            setTimeout(() => aviso.remove(), 4000);
+            
+            // Limpia el formulario después del envío
+            form.reset(); 
         }
     });
 });
