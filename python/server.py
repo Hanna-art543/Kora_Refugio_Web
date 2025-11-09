@@ -1,58 +1,113 @@
-from http.server import HTTPServer, BaseHTTPRequestHandler
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import urllib.parse
+import mysql.connector
+import os
 
-# Definimos nuestro servidor
+# Configuración del servidor
+HOST = "localhost"
+PORT = 8000
+
+# Carpeta base (donde están tus archivos HTML, CSS y JS)
+BASE_DIR = os.path.join(os.path.dirname(__file__), "..")
+
 class MiServidor(BaseHTTPRequestHandler):
-
-    # Método GET: mostrar archivos estáticos (HTML, CSS, JS)
     def do_GET(self):
+        """Maneja las solicitudes GET (archivos HTML, CSS, JS, etc.)"""
         if self.path == "/":
             self.path = "/index.html"
 
-        try:
-            with open(self.path[1:], "rb") as file:
-                if self.path.endswith(".html"):
-                    content_type = "text/html"
-                elif self.path.endswith(".css"):
-                    content_type = "text/css"
-                elif self.path.endswith(".js"):
-                    content_type = "application/javascript"
-                else:
-                    content_type = "text/plain"
+        file_path = os.path.join(BASE_DIR, self.path.lstrip("/"))
 
+        try:
+            # Determinar tipo de contenido
+            if self.path.endswith(".html"):
+                content_type = "text/html"
+            elif self.path.endswith(".css"):
+                content_type = "text/css"
+            elif self.path.endswith(".js"):
+                content_type = "application/javascript"
+            elif self.path.endswith(".jpg") or self.path.endswith(".jpeg"):
+                content_type = "image/jpeg"
+            elif self.path.endswith(".png"):
+                content_type = "image/png"
+            else:
+                content_type = "text/plain"
+
+            # Leer archivo solicitado
+            with open(file_path, "rb") as file:
+                contenido = file.read()
                 self.send_response(200)
                 self.send_header("Content-type", content_type)
                 self.end_headers()
-                self.wfile.write(file.read())
+                self.wfile.write(contenido)
+
         except FileNotFoundError:
             self.send_response(404)
+            self.send_header("Content-type", "text/html; charset=utf-8")
             self.end_headers()
-            self.wfile.write(b"404 - Archivo no encontrado")
+            self.wfile.write(b"<h1>404 - Pagina no encontrada</h1>")
 
-    # Método POST: cuando se envía el formulario
     def do_POST(self):
+        """Maneja las solicitudes POST (formulario de contacto)"""
         if self.path == "/contacto":
-            longitud = int(self.headers['Content-Length'])
-            datos = self.rfile.read(longitud).decode("utf-8")
+            content_length = int(self.headers["Content-Length"])
+            post_data = self.rfile.read(content_length).decode("utf-8")
 
-            # Parseamos los datos recibidos
-            datos_parseados = urllib.parse.parse_qs(datos)
-
+            # Parsear los datos del formulario
+            datos_parseados = urllib.parse.parse_qs(post_data)
             nombre = datos_parseados.get("nombre", [""])[0]
             edad = datos_parseados.get("edad", [""])[0]
             mensaje = datos_parseados.get("mensaje", [""])[0]
 
-            print(f"📩 Nuevo mensaje recibido:\nNombre: {nombre}\nEdad: {edad}\nMensaje: {mensaje}\n")
+            print("\n📩 Nuevo mensaje recibido:")
+            print(f"Nombre: {nombre}")
+            print(f"Edad: {edad}")
+            print(f"Mensaje: {mensaje}\n")
 
-            # Respuesta al navegador
-            self.send_response(200)
-            self.send_header("Content-type", "text/html")
+            try:
+                # Conexión a MySQL
+                conexion = mysql.connector.connect(
+                host="localhost",
+                user="root",
+                password="",
+                database="Kora_Refugio_Web"
+                )
+
+                cursor = conexion.cursor()
+
+                # Insertar los datos en la tabla mensajes
+                cursor.execute(
+                    "INSERT INTO mensajes (nombre, edad, mensaje) VALUES (%s, %s, %s)",
+                    (nombre, edad, mensaje)
+                )
+
+                conexion.commit()
+                conexion.close()
+
+                # Respuesta exitosa al navegador (para fetch)
+                self.send_response(200)
+                self.send_header("Content-type", "text/plain; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(b"OK")
+
+            except Exception as e:
+                print("❌ Error al guardar el mensaje:", e)
+                self.send_response(500)
+                self.send_header("Content-type", "text/plain; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(b"ERROR")
+        else:
+            self.send_response(404)
             self.end_headers()
-            self.wfile.write(b"<h1 Mensaje recibido. Gracias!</h1>")
+            self.wfile.write(b"Ruta no encontrada")
 
-# Ejecutar el servidor en localhost:8000
+# Iniciar servidor
 if __name__ == "__main__":
-    puerto = 8000
-    servidor = HTTPServer(("localhost", puerto), MiServidor)
-    print(f"🚀 Servidor corriendo en http://localhost:{puerto}")
-    servidor.serve_forever()
+    servidor = HTTPServer((HOST, PORT), MiServidor)
+    print(f"🚀 Servidor corriendo en http://{HOST}:{PORT}")
+    print("Presiona CTRL + C para detenerlo.")
+    try:
+        servidor.serve_forever()
+    except KeyboardInterrupt:
+        print("\n🛑 Servidor detenido correctamente.")
+        servidor.server_close()

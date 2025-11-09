@@ -16,26 +16,29 @@
             <a href="mensajes.html">Mensajes</a>
         </nav>
     </header>
+
     <main>
         <h2>Deja tu mensaje con confianza</h2>
-        <form method="POST" action="/contacto">
-            <label for ="nombre">Nombre o alias:</label>
-            <input type ="text" id ="nombre" name ="nombre" required><br><br>
+        <form method="post" action="/contacto" id="form-contacto">
+            <label for="nombre">Nombre o alias:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
 
-            <label for = "edad">Edad:</label>
-            <input type = "number" id ="edad" name = "edad" required><br><br>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required><br><br>
 
-            <label for ="mensaje">Ingresa mensaje:</label>
-            <textarea id="mensaje" name ="mensaje" required></textarea><br><br>
+            <label for="mensaje">Ingresa mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea><br><br>
 
-            <button type ="submit">Enviar</button>
+            <button type="submit">Enviar</button>
         </form>
+
+        <div id="respuesta-servidor"></div>
     </main>
+
     <footer>
         <p>© 2025 Kora Refugio Web</p>
     </footer>
 
-    <!-- Aquí enlazamos con el JS de contacto-->
     <script src="js/validacion.js"></script>
 </body>
 </html>

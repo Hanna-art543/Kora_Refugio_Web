@@ -1,42 +1,49 @@
-// Esperamos a que toda la página cargue antes de ejecutar
 document.addEventListener("DOMContentLoaded", () => {
-    // Seleccionamos el formulario
-    const form = document.querySelector("form");
-    
-    // Escuchamos el evento de "submit" (cuando el usuario presiona enviar)
-    form.addEventListener("submit", (e) => {
-        e.preventDefault(); 
-        // Evita que el formulario se mande de verdad (lo haremos en Semana 4 con Python/Flask)
+    const form = document.querySelector("#form-contacto");
+    const contenedorRespuesta = document.querySelector("#respuesta-servidor");
 
-        // Obtenemos los valores de los campos
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
         const nombre = document.querySelector("#nombre").value.trim();
         const edad = document.querySelector("#edad").value.trim();
         const mensaje = document.querySelector("#mensaje").value.trim();
 
-        // Validamos si hay campos vacíos
         if (!nombre || !edad || !mensaje) {
             alert("Por favor, completa todos los campos.");
-        } else {
-            const contenedor = document.querySelector("main");
+            return;
+        }
 
-            const aviso = document.createElement("p");
-            aviso.textContent = "¡Mensaje enviado con éxito! Gracias por compartir 💜";
-            aviso.style.backgroundColor = "#b28be3";
-            aviso.style.color = "white";
-            aviso.style.padding = "10px";
-            aviso.style.borderRadius = "10px";
-            aviso.style.textAlign = "center";
-            aviso.style.marginTop = "15px";
-            aviso.style.fontWeight = "bold";
+        try {
+            const response = await fetch("/contacto", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: new URLSearchParams({ nombre, edad, mensaje }),
+            });
 
-            // Agregamos el mensaje al main
-            contenedor.appendChild(aviso);
-
-            // Lo borramos automáticamente después de 4 segundos
-            setTimeout(() => aviso.remove(), 4000);
-            
-            // Limpia el formulario después del envío
-            form.reset(); 
+            if (response.ok) {
+                contenedorRespuesta.innerHTML = `
+                    <p style="
+                        background-color: #b28be3;
+                        color: white;
+                        padding: 10px;
+                        border-radius: 10px;
+                        text-align: center;
+                        font-weight: bold;
+                        margin-top: 15px;
+                    ">
+                        💜 Mensaje recibido correctamente. ¡Gracias por compartir!
+                    </p>
+                `;
+                form.reset();
+            } else {
+                contenedorRespuesta.innerHTML = `<p style="color:red;">Hubo un problema al enviar el mensaje.</p>`;
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            contenedorRespuesta.innerHTML = `<p style="color:red;">Error de conexión con el servidor.</p>`;
         }
     });
 });
