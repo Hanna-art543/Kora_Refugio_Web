@@ -1,0 +1,35 @@
+{
+  "feliz": [
+    {
+      "titulo": "Un día lleno de luz",
+      "contenido": "María despertó con una sonrisa. Decidió hacer una lista de cosas que la hacían feliz...",
+      "imagen": "imagenes/historias/feliz1.jpg"
+    },
+    {
+      "titulo": "La sorpresa de Ana",
+      "contenido": "Ana recibió una carta inesperada que le recordó que era importante...",
+      "imagen": "imagenes/historias/feliz2.jpg"
+    }
+  ],
+  "triste": [
+    {
+      "titulo": "Cuando me sentí solo",
+      "contenido": "Hubo un día en el que Carlos pensó que nadie lo escuchaba...",
+      "imagen": "imagenes/historias/triste1.jpg"
+    }
+  ],
+  "enojado": [
+    {
+      "titulo": "Respirar antes de hablar",
+      "contenido": "Lucía estaba muy molesta por una discusión, pero decidió tomarse un momento...",
+      "imagen": "imagenes/historias/enojado1.jpg"
+    }
+  ],
+  "motivado": [
+    {
+      "titulo": "Pequeños pasos",
+      "contenido": "Cada logro empieza con un paso pequeño. Sofía decidió iniciar...",
+      "imagen": "imagenes/historias/motivado1.jpg"
+    }
+  ]
+}

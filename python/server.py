@@ -69,7 +69,7 @@ class MiServidor(BaseHTTPRequestHandler):
                 conexion = mysql.connector.connect(
                 host="localhost",
                 user="root",
-                password="",
+                password="1234",
                 database="Kora_Refugio_Web"
                 )
 
