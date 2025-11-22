@@ -1,0 +1,145 @@
+{
+  "emociones": {
+    "triste": {
+      "titulo": "Cuando te sientes triste",
+      "descripcion": "La tristeza es una emoción natural que nos invita a reflexionar, descansar o pedir apoyo.",
+      "consejos": [
+        "Respira profundamente durante 1 minuto.",
+        "Escribe lo que sientes en una nota.",
+        "Camina 10 minutos para despejar tu mente.",
+        "Haz una pequeña actividad que disfrutes."
+      ],
+      "no_hacer": [
+        "Aislarte completamente todo el día.",
+        "Reprimir tus emociones sin expresarlas."
+      ],
+      "frases": [
+        "Es solo un mal día, no una mala vida.",
+        "A veces descansar también es avanzar."
+      ],
+      "videos": [
+        {
+          "titulo": "Cómo gestionar la tristeza – Psicología",
+          "url": "https://www.youtube.com/embed/5v0r2XjH8pE",
+          "fuente": "Canal: Psicología Online"
+        },
+        {
+          "titulo": "Meditación guiada para momentos difíciles",
+          "url": "https://www.youtube.com/embed/z6X5oEIgGqs",
+          "fuente": "Canal: InnerSelf"
+        }
+      ]
+    },
+
+    "enojado": {
+      "titulo": "Cuando estás enojado",
+      "descripcion": "El enojo aparece cuando algo cruza tus límites. Es una señal para actuar con calma.",
+      "consejos": [
+        "Aléjate 2 minutos de la situación.",
+        "Respira contando del 4–4–4.",
+        "Exprésate sin gritar usando frases con 'yo siento...'."
+      ],
+      "no_hacer": [
+        "Responder impulsivamente.",
+        "Gritar o dañar objetos."
+      ],
+      "frases": [
+        "La calma es poder.",
+        "No todo merece tu reacción."
+      ],
+      "videos": [
+        {
+          "titulo": "Cómo controlar el enojo",
+          "url": "https://www.youtube.com/embed/oZHXkN5ijAE",
+          "fuente": "Canal: Psicología y Mente"
+        }
+      ]
+    },
+
+    "feliz": {
+      "titulo": "Cuando te sientes feliz",
+      "descripcion": "La felicidad es energía positiva. Úsala para fortalecer hábitos.",
+      "consejos": [
+        "Comparte algo bueno con un amigo.",
+        "Escribe tres cosas por las que agradeces.",
+        "Haz algo creativo."
+      ],
+      "no_hacer": [
+        "Ignorar tus responsabilidades solo por emoción.",
+        "Pensar que la felicidad debe durar para siempre."
+      ],
+      "frases": [
+        "La felicidad se disfruta mejor cuando se comparte.",
+        "Agradecer multiplica lo bueno."
+      ],
+      "videos": [
+        {
+          "titulo": "Pequeñas acciones para ser más feliz",
+          "url": "https://www.youtube.com/embed/8KkKuTCFvzI",
+          "fuente": "TED Ed"
+        }
+      ]
+    },
+
+    "motivado": {
+      "titulo": "Cuando estás motivado",
+      "descripcion": "La motivación es la chispa que impulsa a actuar. Aprovecha esa energía.",
+      "consejos": [
+        "Define una meta pequeña para hoy.",
+        "Organiza tu espacio de estudio.",
+        "Empieza por lo más importante."
+      ],
+      "no_hacer": [
+        "Posponer las actividades.",
+        "Hacer demasiadas cosas a la vez."
+      ],
+      "frases": [
+        "Un día a la vez.",
+        "El mejor momento para empezar es ahora."
+      ],
+      "videos": [
+        {
+          "titulo": "Hábitos para estudiantes",
+          "url": "https://www.youtube.com/embed/ZXsQAXx_ao0",
+          "fuente": "Canal: Productivity Game"
+        }
+      ]
+    },
+
+    "ansioso": {
+      "titulo": "Cuando estás ansioso",
+      "descripcion": "La ansiedad es una alarma del cuerpo. Aprender a bajar la intensidad ayuda a pensar mejor.",
+      "consejos": [
+        "Haz respiración 4–7–8.",
+        "Pon tus manos en el corazón y respira lento.",
+        "Haz una lista de pensamientos reales vs. imaginarios."
+      ],
+      "no_hacer": [
+        "Evitar todo lo que te preocupa.",
+        "Exigir que la ansiedad desaparezca rápido."
+      ],
+      "frases": [
+        "Respira, esto también pasará.",
+        "No creas todo lo que piensas."
+      ],
+      "videos": [
+        {
+          "titulo": "Ejercicio para calmar ansiedad",
+          "url": "https://www.youtube.com/embed/z_8JqbPC-Qk",
+          "fuente": "Canal: Respira y Avanza"
+        }
+      ]
+    }
+  },
+
+  "recursos": [
+    {
+      "nombre": "UNICEF – Salud mental para adolescentes",
+      "url": "https://www.unicef.org/es/salud-mental-adolescentes"
+    },
+    {
+      "nombre": "OMS – Salud mental y bienestar",
+      "url": "https://www.who.int/es/news-room/fact-sheets/detail/adolescent-mental-health"
+    }
+  ]
+}
