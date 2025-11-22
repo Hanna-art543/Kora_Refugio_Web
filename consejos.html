@@ -2,8 +2,46 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
     <title>Consejos - Kora Refugio Web</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Contenedor que tiene el contenido dinámico */
+#contenedor-consejos {
+    display: flex;
+    justify-content: center; /* CENTRA el contenido */
+    margin-top: 2rem;
+}
+
+/* Card principal de cada emoción */
+.card {
+    max-width: 800px;            /* MÁS ANCHA */
+    width: 100%;                 /* Ocupa todo lo disponible */
+    background: #f3dcff;         /* Tu color suave */
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    text-align: center;          /* Centrado bonito */
+}
+
+/* Ajuste de listas internas dentro del card */
+.card ul {
+    text-align: left;            /* Las listas quedan alineadas */
+    margin-left: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Ajusta el ancho de los iframes (videos) */
+.card iframe {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+    </style>
+
 </head>
 <body>
     <header>
@@ -16,16 +54,39 @@
             <a href="mensajes.html">Mensajes</a>
         </nav>
     </header>
+
     <main>
-        <h2>Tips y recursos</h2>
-        <ul>
-            <li>Cuando sientas ansiedad respira profundo.</li>
-            <li>Habla con alguien de confianza si estás triste.</li>
-            <li>Escribe en un diario para liberar tus emociones.</li>
-        </ul>
+        <h1>Consejos según tu emoción</h1>
+
+        <!-- Selector de emociones -->
+        <section aria-labelledby="titulo-emociones">
+            <h2 id="titulo-emociones">¿Cómo te sientes hoy?</h2>
+
+            <div class="emociones-container">
+                <button class="emocion-btn" data-emocion="triste">Triste</button>
+                <button class="emocion-btn" data-emocion="enojado">Enojado</button>
+                <button class="emocion-btn" data-emocion="feliz">Feliz</button>
+                <button class="emocion-btn" data-emocion="motivado">Motivado</button>
+                <button class="emocion-btn" data-emocion="ansioso">Ansioso</button>
+            </div>
+        </section>
+
+        <!-- Contenido dinámico cargado desde consejos.js -->
+        <section id="contenedor-consejos"></section>
+
+        <!-- Recursos recomendados al final -->
+        <section aria-labelledby="titulo-recursos">
+            <h2 id="titulo-recursos">Recursos Recomendados</h2>
+
+            <div id="lista-recursos" class="card"></div>
+        </section>
+
     </main>
-     <footer>
-        <p>© 2025 Kora Refugio Web</p>
+
+    <footer>
+        <p>© 2025 Bienestar Emocional – Proyecto Académico</p>
     </footer>
+
+    <script src="js/consejos.js"></script>
 </body>
 </html>
