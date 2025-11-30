@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consejos - Kora Refugio Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        /* Tus estilos específicos se mantienen igual */
+        #contenedor-consejos { display: flex; justify-content: center; margin-top: 2rem; }
+        .card { max-width: 800px; width: 100%; background: #f3dcff; padding: 2rem; border-radius: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); text-align: center; }
+        .card ul { text-align: left; margin-left: 1.2rem; font-size: 1rem; line-height: 1.5; }
+        .card iframe { width: 100%; max-width: 700px; border-radius: 12px; margin-top: 1rem; }
+        /* Estilo extra para que se note que los botones son clickeables */
+        .emocion-btn { cursor: pointer; margin: 5px; padding: 10px 15px; border-radius: 5px; border: none; background-color: #ddd; transition: 0.3s; }
+        .emocion-btn:hover { background-color: #bfaee3; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Consejos para tu salud mental</h1>
+        <nav>
+            <a href="/">Inicio</a> |
+            <a href="/consejos">Consejos</a> |
+            <a href="/historias">Historias</a> |
+            <a href="/contacto">Contacto</a> |
+            <a href="/diario">Diario</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Consejos según tu emoción</h1>
+
+        <section aria-labelledby="titulo-emociones">
+            <h2 id="titulo-emociones">¿Cómo te sientes hoy?</h2>
+
+            <div class="emociones-container">
+                <button class="emocion-btn" data-emocion="triste">Triste</button>
+                <button class="emocion-btn" data-emocion="enojado">Enojado</button>
+                <button class="emocion-btn" data-emocion="feliz">Feliz</button>
+                <button class="emocion-btn" data-emocion="motivado">Motivado</button>
+                <button class="emocion-btn" data-emocion="ansioso">Ansioso</button>
+            </div>
+        </section>
+
+        <section id="contenedor-consejos"></section>
+
+        <section aria-labelledby="titulo-recursos">
+            <h2 id="titulo-recursos">Recursos Recomendados</h2>
+            <div id="lista-recursos" class="card"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Bienestar Emocional – Proyecto Académico</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/consejos.js') }}"></script>
+</body>
+</html>

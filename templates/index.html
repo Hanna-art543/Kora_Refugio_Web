@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Kora Refugio Web - Inicio</title>
+</head>
+<body>
+    <header>
+        <h1>Kora Refugio Web</h1>
+        <nav>
+            <a href="/">Inicio</a> |
+            <a href="/login">Login</a> |
+            <a href="/register">Registrarse</a> |
+            <a href="/consejos">Consejos</a> |
+            <a href="/historias">Historias</a> |
+            <a href="/contacto">Contacto</a> |
+            <a href="/mensajes">Mensajes</a> |
+            <a href="/diario">Diario</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Bienvenido a tu espacio emocional</h2>
+        <img src="{{ url_for('static', filename='imagenes/refugio.jpg') }}" alt="Niña debajo de una flor">
+        <p>Un lugar seguro para poder ayudarte con tus emociones, encontrar 
+           consejos y leer historias motivadoras.</p>
+    </main>
+    <footer>
+        <p>© 2025 Kora Refugio Web</p>
+    </footer>
+</body>
+</html>

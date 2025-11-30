@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Mi Diario - Kora Refugio</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Diario Personal</h1>
+        <nav>
+            <a href="/">Inicio</a> |
+            <a href="/consejos">Consejos</a> |
+            <a href="/logout">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Hola, {{ usuario }} 👋</h2>
+        <p>Este es tu espacio seguro. Escribe lo que sientes hoy.</p>
+
+        <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); max-width: 600px; margin: 0 auto 40px auto;">
+            <form action="/diario/add" method="POST" style="box-shadow: none; padding: 0; margin: 0;">
+                <label>¿Cómo te sientes hoy?</label>
+                <textarea name="contenido" rows="3" required placeholder="Escribe aquí tus pensamientos..." style="width: 100%; border: 1px solid #ddd; border-radius: 8px; padding: 10px;"></textarea>
+                <button type="submit" style="margin-top: 10px;">Guardar en mi muro</button>
+            </form>
+        </div>
+
+        <h3>💭 Tus Pensamientos Guardados</h3>
+        
+        <div class="muro-diario">
+            {% for d in datos %}
+                <div class="nota-diario">
+                    <div class="fecha-nota">📅 {{ d.fecha }}</div>
+                    
+                    <div class="contenido-nota">
+                        {{ d.contenido }}
+                    </div>
+
+                    <div class="icono-diario">💜</div>
+                </div>
+            {% else %}
+                <p style="text-align: center; width: 100%;">Aún no has escrito nada. ¡Empieza hoy!</p>
+            {% endfor %}
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2025 Kora Refugio Web</p>
+    </footer>
+</body>
+</html>

@@ -20,13 +20,13 @@
       "videos": [
         {
           "titulo": "Cómo gestionar la tristeza – Psicología",
-          "url": "https://www.youtube.com/embed/5v0r2XjH8pE",
+          "url": "https://youtu.be/hnfdgrsfVYg?si=5zMVtkNoIGNtfTsr",
           "fuente": "Canal: Psicología Online"
         },
         {
           "titulo": "Meditación guiada para momentos difíciles",
-          "url": "https://www.youtube.com/embed/z6X5oEIgGqs",
-          "fuente": "Canal: InnerSelf"
+          "url": "https://www.youtube.com/watch?v=oh2CKGRqJpc",
+          "fuente": "Canal: Anabel Otero"
         }
       ]
     },
@@ -50,8 +50,13 @@
       "videos": [
         {
           "titulo": "Cómo controlar el enojo",
-          "url": "https://www.youtube.com/embed/oZHXkN5ijAE",
-          "fuente": "Canal: Psicología y Mente"
+          "url": "https://www.youtube.com/watch?v=VaEwb48r0Ss",
+          "fuente": "Canal: Psicología Animada"
+        }, 
+        {
+          "titulo": "Como amigarse con el enojo",
+          "url": "https://www.youtube.com/watch?v=f-6mjK0OUfo",
+          "fuente": "TEDx Talks"
         }
       ]
     },
@@ -74,9 +79,9 @@
       ],
       "videos": [
         {
-          "titulo": "Pequeñas acciones para ser más feliz",
-          "url": "https://www.youtube.com/embed/8KkKuTCFvzI",
-          "fuente": "TED Ed"
+          "titulo": "Hábitos de Personas Felices",
+          "url": "https://www.youtube.com/watch?v=R4cTdAeDw18",
+          "fuente": "Psych2Go Español - Psicología Para llevar"
         }
       ]
     },
@@ -99,9 +104,9 @@
       ],
       "videos": [
         {
-          "titulo": "Hábitos para estudiantes",
-          "url": "https://www.youtube.com/embed/ZXsQAXx_ao0",
-          "fuente": "Canal: Productivity Game"
+          "titulo": "Hábitos que te convertirán en el Mejor Estudiante",
+          "url": "https://www.youtube.com/watch?v=L2LXWX-awuQ",
+          "fuente": "Isadora Vera"
         }
       ]
     },
@@ -125,8 +130,8 @@
       "videos": [
         {
           "titulo": "Ejercicio para calmar ansiedad",
-          "url": "https://www.youtube.com/embed/z_8JqbPC-Qk",
-          "fuente": "Canal: Respira y Avanza"
+          "url": "https://www.youtube.com/watch?v=ifKLyrl2mTk",
+          "fuente": "Canal: Centro Médico ABC"
         }
       ]
     }
@@ -134,8 +139,8 @@
 
   "recursos": [
     {
-      "nombre": "UNICEF – Salud mental para adolescentes",
-      "url": "https://www.unicef.org/es/salud-mental-adolescentes"
+      "nombre": "UNICEF – Salud mental",
+      "url": "https://www.unicef.es/causas/salud-mental"
     },
     {
       "nombre": "OMS – Salud mental y bienestar",

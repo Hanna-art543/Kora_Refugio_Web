@@ -202,3 +202,62 @@ button:hover {
     border-radius: 10px;
     cursor: pointer;
 }
+
+/* --- ESTILOS NUEVOS PARA DIARIO --- */
+
+/* Contenedor tipo "muro" para las notas */
+.muro-diario {
+    display: grid;
+    /* Esto hace que se acomoden automáticamente en columnas */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* El diseño de cada "papelito" o tarjeta */
+.nota-diario {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra suave */
+    border-top: 6px solid #9b59b6; /* Borde morado arriba */
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.nota-diario:hover {
+    transform: translateY(-5px); /* Efecto de flotar al pasar el mouse */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Estilo para la fecha */
+.fecha-nota {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Estilo para el texto del diario */
+.contenido-nota {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    /* Esto ayuda a que el texto largo no rompa la tarjeta */
+    word-wrap: break-word; 
+}
+
+/* Decoración bonita */
+.icono-diario {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    text-align: right;
+}

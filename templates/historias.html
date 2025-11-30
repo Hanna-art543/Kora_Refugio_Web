@@ -2,18 +2,18 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Historias - Kora Refugio Web</title>
 </head>
 <body>
     <header>
         <h1>Historias que inspiran</h1>
         <nav>
-            <a href="index.html">Inicio</a> |
-            <a href="consejos.html">Consejos</a> |
-            <a href="historias.html">Historias</a> |
-            <a href="contacto.html">Contacto</a> |
-            <a href="mensajes.html">Mensajes</a>
+            <a href="/">Inicio</a> |
+            <a href="/consejos">Consejos</a> |
+            <a href="/historias">Historias</a> |
+            <a href="/contacto">Contacto</a> |
+            <a href="/diario">Diario</a>
         </nav>
     </header>
     <main>
@@ -31,8 +31,7 @@
         <p>© 2025 Kora Refugio Web</p>
     </footer>
 
-    <!-- Aquí enlazamos con el JS de historias -->
-    <script src="js/historias.js"></script>
+    <script src="{{ url_for('static', filename='js/historias.js') }}"></script>
 
 </body>
 </html>

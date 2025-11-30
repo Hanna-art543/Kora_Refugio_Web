@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Mensajes - Kora Refugio Web</title>
+</head>
+<body>
+    <header>
+        <h1>Mensajes recibidos (Admin)</h1>
+        <nav>
+            <a href="/">Inicio</a> |
+            <a href="/contacto">Volver a Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Buzón de base de datos</h2>
+        
+        <div style="text-align: left; max-width: 600px; margin: 0 auto;">
+            {% if mensajes %}
+                {% for m in mensajes %}
+                    <div style="background: white; padding: 15px; margin-bottom: 10px; border-radius: 8px; border-left: 5px solid #9b59b6;">
+                        <strong>{{ m.nombre }}</strong> ({{ m.edad }} años) dijo:<br>
+                        <p>{{ m.mensaje }}</p>
+                        <small style="color: grey;">{{ m.fecha }}</small>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No hay mensajes aún.</p>
+            {% endif %}
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Kora Refugio Web</p>
+    </footer>
+</body>
+</html>

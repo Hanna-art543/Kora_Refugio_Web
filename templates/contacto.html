@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Contacto - Kora Refugio Web</title>
+</head>
+<body>
+    <header>
+        <h1>Contáctenos</h1>
+        <nav>
+            <a href="/">Inicio</a> |
+            <a href="/consejos">Consejos</a> |
+            <a href="/historias">Historias</a> |
+            <a href="/contacto">Contacto</a> |
+            <a href="/mensajes">Mensajes</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Deja tu mensaje con confianza</h2>
+        
+        {% if exito %}
+            <h3 style="color: green;">¡Mensaje recibido correctamente!</h3>
+        {% endif %}
+
+        <form method="post" action="/contacto">
+            <label for="nombre">Nombre o alias:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required>
+
+            <label for="mensaje">Ingresa mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 Kora Refugio Web</p>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='js/validacion.js') }}"></script>
+</body>
+</html>

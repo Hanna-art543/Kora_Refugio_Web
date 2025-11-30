@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - Kora Refugio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Crear Cuenta</h1>
+        <nav>
+            <a href="/">Inicio</a> |
+            <a href="/login">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Únete a nosotros</h2>
+        
+        <form action="/register" method="POST">
+            <label>Usuario:</label>
+            <input type="text" name="usuario" required>
+
+            <label>Contraseña:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Registrarme</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 Kora Refugio Web</p>
+    </footer>
+</body>
+</html>
