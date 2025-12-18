@@ -203,12 +203,11 @@ button:hover {
     cursor: pointer;
 }
 
-/* --- ESTILOS NUEVOS PARA DIARIO --- */
+/*Estilo Diario*/
 
 /* Contenedor tipo "muro" para las notas */
 .muro-diario {
-    display: grid;
-    /* Esto hace que se acomoden automáticamente en columnas */
+    display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
     padding: 20px 0;
@@ -251,7 +250,6 @@ button:hover {
     color: #444;
     line-height: 1.6;
     margin-bottom: 15px;
-    /* Esto ayuda a que el texto largo no rompa la tarjeta */
     word-wrap: break-word; 
 }
 

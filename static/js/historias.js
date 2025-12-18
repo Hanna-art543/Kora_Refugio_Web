@@ -2,7 +2,6 @@ let historias = {};
 
 async function cargarHistorias() {
     try {
-        // CAMBIO IMPORTANTE: Ruta absoluta a static
         const respuesta = await fetch("/static/js/data/historias.json");
         if (!respuesta.ok) throw new Error("Error de red al cargar JSON");
         historias = await respuesta.json();
@@ -15,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarHistorias();
 });
 
-// Función para mostrar los títulos
+
 function mostrarHistoria(emocion) {
     const contenedor = document.getElementById("historia");
     contenedor.innerHTML = "";
@@ -25,17 +24,13 @@ function mostrarHistoria(emocion) {
         return;
     }
 
-    // Crear cuadros horizontales
     historias[emocion].forEach((h, index) => {
         const card = document.createElement("div");
         card.className = "card";
         
-        // Estilo extra para que parezca botón
         card.style.cursor = "pointer";
         card.style.margin = "10px auto";
 
-        // Nota: Asegúrate de que en tu JSON las imágenes tengan ruta "/static/imagenes/..."
-        // O si son enlaces de internet, déjalos como están.
         card.innerHTML = `
             <img src="${h.imagen}" alt="${h.titulo}" style="max-width:100%; border-radius:10px;">
             <h4>${h.titulo}</h4>
@@ -52,12 +47,21 @@ function mostrarHistoriaCompleta(emocion, index) {
     const contenedor = document.getElementById("historia");
 
     contenedor.innerHTML = `
-        <div class="historia-completa card">
-            <h3>${h.titulo}</h3>
-            <img src="${h.imagen}" alt="${h.titulo}" class="img-historia">
-            <p style="text-align: left; margin-top: 15px;">${h.contenido}</p>
+        <div class="historia-completa" style="width: 100%; max-width: 800px; margin: 0 auto; padding: 20px;">
+            <h2 style="color: #4b2c61; margin-bottom: 20px;">${h.titulo}</h2>
+            
+            <img src="${h.imagen}" alt="${h.titulo}" 
+                 style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 15px; margin-bottom: 20px;">
+            
+            <div style="text-align: left; line-height: 1.6; font-size: 1.1em;">
+                <p>${h.contenido}</p>
+            </div>
+
             <br>
-            <button onclick="mostrarHistoria('${emocion}')" style="background:#9b59b6; color:white; padding:10px; border:none; border-radius:5px; cursor:pointer;">⟵ Volver a la lista</button>
+            <button onclick="mostrarHistoria('${emocion}')" 
+                    style="background:#9b59b6; color:white; padding:12px 25px; border:none; border-radius:8px; cursor:pointer; font-weight: bold;">
+                ⟵ Volver a la lista
+            </button>
         </div>
     `;
 }

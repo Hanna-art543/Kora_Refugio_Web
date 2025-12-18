@@ -4,16 +4,16 @@ import mysql.connector
 app = Flask(__name__)
 app.secret_key = "super_secreto_kora"
 
-# --- CONEXIÓN A BD ---
+# CONEXIÓN A BD
 def get_db_connection():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="1234",  # <--- CONFIRMA TU CONTRASEÑA AQUÍ
+        password="1234",  
         database="kora_refugio_web"
     )
 
-# --- RUTAS PÚBLICAS ---
+# RUTAS PÚBLICAS
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -85,7 +85,7 @@ def logout():
     session.clear()
     return redirect(url_for("index"))
 
-# --- ÁREA PRIVADA ---
+# ÁREA PRIVADA
 @app.route("/diario")
 def diario():
     if "user_id" not in session:
