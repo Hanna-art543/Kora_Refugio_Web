@@ -1,4 +1,4 @@
-# Kora Refugio Web 🌿
+# Kora Refugio Web 💜
 
 ## Descripción del Proyecto
 Kora Refugio Web es una plataforma digital diseñada como un espacio seguro y educativo para adolescentes, cuyo propósito central es brindar apoyo, consejos y herramientas prácticas para el bienestar emocional y la gestión de sentimientos. Este proyecto académico implementa una arquitectura web integral que permite a los usuarios navegar por contenidos informativos, registrar sus vivencias y enviar consultas a través de formularios, mientras que el sistema garantiza la persistencia de los datos y ofrece un panel de administración para la gestión eficiente de la retroalimentación recibida.

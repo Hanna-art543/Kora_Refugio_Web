@@ -42,7 +42,7 @@ def contacto():
         return render_template("contacto.html", exito=True)
     return render_template("contacto.html")
 
-# --- LOGIN Y REGISTRO ---
+# LOGIN Y REGISTRO
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
