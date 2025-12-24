@@ -24,3 +24,14 @@ Para el desarrollo de esta aplicación se utilizó un conjunto de tecnologías q
 * **Gestión de Mensajes:** Formulario de contacto funcional para el envío de información.
 * **Panel Administrativo:** Sección protegida para visualizar y gestionar los mensajes recibidos.
 * **Código de Calidad:** Repositorio organizado con código comentado para facilitar su mantenimiento.
+
+---
+
+## Anexos
+### 📑 Diapositivas  
+Accede a la presentación del proyecto: 
+https://www.canva.com/design/DAG8bSbMxpM/eu69QkmXIgQXIHZEfwsTxA/edit?utm_content=DAG8bSbMxpM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+### 📝 Informe  
+Consulta el informe detallado del proyecto:
+https://docs.google.com/document/d/1L8sdx_7AOridPborO66j1edIx6ii5lk67bOrIMWObvI/edit?usp=sharing
